@@ -64,7 +64,7 @@ function first() {
 }
 */
 
-
+// Lexical scoping: A function that is lexically within another function gets access to the scope of the outer function.
 
 // Example to show the differece between execution stack and scope chain
 
@@ -93,11 +93,35 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+calculateAge(1982);
+
+function calculateAge(year)
+{
+    console.log(2020-year);
+    console.log(this);
+}
+
+
+var john =
+    {
+        name: "Guru",
+        yearOfBirth:1982,
+        calcuateAge : function()
+        {
+            console.log(this);
+             console.log("Age : " + (2020-this.yearOfBirth));
+            
+            function innerFunction()
+            {
+                 console.log("From Innerfunction");
+                console.log(this);
+            }
+            
+            innerFunction();
+        }
+ }
 
 
 
-
-
-
-
+john.calcuateAge();
 
