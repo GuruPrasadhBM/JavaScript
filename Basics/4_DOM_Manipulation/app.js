@@ -9,8 +9,7 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer;
-
+var scores, roundScore, activePlayer, isGamePlaying;
 Init();
 
 //dice=Math.floor(Math.random() * 6 )+ 1;
@@ -37,22 +36,26 @@ Init();
 
 //Using anonmymous function. a function that cannot be reused
 document.querySelector('.btn-roll').addEventListener('click', function () {
-  //1.Generate a random number
-  var dice = Math.floor(Math.random() * 6) + 1;
+  if (isGamePlaying) {
+    //1.Generate a random number
+    var dice = Math.floor(Math.random() * 6) + 1;
 
-  //2. Display the result
-  //Show the dice
-  var diceDOM = document.querySelector('.dice');
-  diceDOM.style.display = 'block';
-  diceDOM.src = 'dice-' + dice + '.png';
+    //2. Display the result
+    //Show the dice
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = 'dice-' + dice + '.png';
 
-  //3.update the dice score if the rolled number was not a 1
-  if (dice !== 1) {
-    //Add score
-    roundScore += dice;
-    document.querySelector('#current-' + activePlayer).textContent = roundScore;
-  } else {
-    nextPlayer();
+    //3.update the dice score if the rolled number was not a 1
+    if (dice !== 1) {
+      //Add score
+      roundScore += dice;
+      document.querySelector(
+        '#current-' + activePlayer
+      ).textContent = roundScore;
+    } else {
+      nextPlayer();
+    }
   }
 });
 
@@ -77,6 +80,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     document
       .querySelector('.player-' + activePlayer + '-panel')
       .classList.remove('active');
+    isGamePlaying = false;
   } else {
     //Next player
     nextPlayer();
@@ -100,6 +104,7 @@ function Init() {
   scores = [0, 0];
   roundScore = 0;
   activePlayer = 0;
+  isGamePlaying = true;
 
   ////Modify css by accessing a class
   document.querySelector('.dice').style.display = 'none';
