@@ -1,4 +1,4 @@
-var john = {
+/*var john = {
   name: 'John',
   yearOfBirth: 1990,
   job: 'teacher',
@@ -20,3 +20,15 @@ john.calculateAge();
 
 var anotherPerson = new Person('John', 1890, 'teacher');
 anotherPerson.calculateAge();
+*/
+
+//Object Create
+
+var personProto = {
+  calculateAge: function () {
+    console.log(2020 - this.yearOfBirth);
+  },
+};
+
+var john = Object.create(personProto);
+john.name = 'John';
