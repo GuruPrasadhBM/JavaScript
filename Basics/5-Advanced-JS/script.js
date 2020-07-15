@@ -84,3 +84,31 @@ designerQuestion('john');
   var score = Math.random() * 10;
   console.log(score >= 5);
 })();
+
+//Closures
+
+function retirement(retirementAge) {
+  return function (yearOfBirth) {
+    var a = 'years left until retirement';
+    var age = 2020 - yearOfBirth;
+    console.log(retirementAge - age + a);
+  };
+}
+
+var retirementUS = retirement(66);
+retirementUS(1990);
+
+//An inner function has always access to the variables and
+// and parameters of its outer funcitons, after the outer function has //// returned.
+
+function interviewQuestion2(job) {
+  return function (name) {
+    if (job === 'designer') {
+      console.log(name + ', What Ux design is');
+    } else if (job === 'teacher') {
+      console.log(name + ', Teacher??');
+    }
+  };
+}
+
+interviewQuestion('teacher')('john');
