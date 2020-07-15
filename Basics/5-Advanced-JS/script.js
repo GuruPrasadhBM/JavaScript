@@ -78,3 +78,9 @@ var teacherQuestion = interviewQuestion('teacher');
 var designerQuestion = interviewQuestion('designer');
 teacherQuestion('john');
 designerQuestion('john');
+
+////IIFE Immediately Invoked Function Expressions.
+(function () {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
