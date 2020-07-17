@@ -19,3 +19,12 @@ console.log(arr);
 
 arr['foo'] = 'bar'; // Will be added, but the length of the array
 //remains same
+
+////30 Wrapper objects
+// Is string a primitive or an object
+
+var greeting = 'Hello World';
+console.log(greeting.length);
+console.log(typeof greeting);
+
+//String primitive has a equivalent object (wrapper object)
