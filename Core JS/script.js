@@ -56,6 +56,14 @@ var fn = function foo() {
   console.log('Hello from a function');
 };
 
+////Function declaration
+function simpleFn() {
+  console.log('Hello from a function');
+}
+
 fn();
 
 //#35 Anonymous function expressions
+var anonyFn = function () {
+  console.log('I am an Anonymous function');
+};
