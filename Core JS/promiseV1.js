@@ -1,5 +1,7 @@
 ////Promises
 
+////Example-1
+
 let promiseToCleanTheRoom = new Promise(function (resolve, reject) {
   ////Do the cleaning process
   let isClean = false;
