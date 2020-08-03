@@ -22,32 +22,32 @@ let winIceCream = function (message) {
 };
 
 ////Nested Promise
-// cleanRoom()
-//   .then(function (result) {
-//     console.log(result);
-//     return removeGarbage(result);
-//   })
-//   .catch(function (rejectMessage) {
-//     console.log('Could not remove garbage');
-//   })
-//   .then(function (result) {
-//     console.log(result);
-//     return winIceCream(result);
-//   })
-//   .catch(function (rejectMessage) {
-//     console.log('Could not win icecream');
-//   })
-//   .then(function (result) {
-//     console.log('finished ' + result);
-//   })
-//   .catch(function (rejectMessage) {
-//     console.log('Could not finish the sequence');
-//   });
+cleanRoom()
+  .then((result) => {
+    //console.log(result);
+    return removeGarbage(result);
+  })
+  .catch(function (rejectMessage) {
+    console.log('Could not remove garbage');
+  })
+  .then((result) => {
+    //console.log(result);
+    return winIceCream(result);
+  })
+  .catch((rejectMessage) => {
+    console.log('Could not win icecream');
+  })
+  .then((result) => {
+    console.log('finished ' + result);
+  })
+  .catch((rejectMessage) => {
+    console.log('Could not finish the sequence');
+  });
 
-Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then(() => {
-  console.log('All finished');
-});
+// Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then(() => {
+//   console.log('All finished');
+// });
 
-Promise.race([cleanRoom(), removeGarbage(), winIceCream()]).then(() => {
-  console.log('One of the promises is finished');
-});
+// Promise.race([cleanRoom(), removeGarbage(), winIceCream()]).then(() => {
+//   console.log('One of the promises is finished');
+// });
