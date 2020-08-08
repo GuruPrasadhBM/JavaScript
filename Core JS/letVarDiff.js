@@ -17,7 +17,7 @@ if (true) {
 //console.log('Value of letVariable out side the block : ' + letVariable);
 const person = { name: 'Guru' };
 //person = { name: 'Prasadh' }; //// Not allowed
-person.name = 'Mahalingam'; /// Allowed
+person.name = 'Mahalingam'; //// Allowed
 console.log(person.name);
 
 /*
